@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Blog - Home</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
+        .container { max-width: 700px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        h1 { text-align: center; }
+        .post { border-bottom: 1px solid #eee; padding: 16px 0; }
+        .post:last-child { border-bottom: none; }
+        .username { color: #888; font-size: 0.95em; }
+        .title { font-size: 1.2em; margin: 0 0 4px 0; }
+        .new-post-btn {
+            display: block;
+            width:100px;
+            text-align: center;
+            margin: 24px auto 32px auto;
+            padding: 12px 32px;
+            background: mediumpurple;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .new-post-btn:hover {
+            background: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <a href="/post" class="new-post-btn">New Post</a>
+    <div class="container">
+        <h1>Recent Posts</h1>
+        <% if (posts && posts.length > 0) { %>
+            <% posts.forEach(function(post) { %>
+                <div class="post">
+                    <div class="title"><%= post.title %></div>
+                    <div class="username">by <%= post.username %></div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>No posts yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>

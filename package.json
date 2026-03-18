@@ -1,0 +1,28 @@
+{
+  "name": "personal-blog",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/caals666/personal-blog#readme",
+  "bugs": {
+    "url": "https://github.com/caals666/personal-blog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caals666/personal-blog.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,12 @@
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSW5kdSIsInBhc3MiOiJwYXNzIiwiaWF0IjoxNzczNTYyODgzfQ.V5XFXlrnagm2atJ_SuJk_BUE3xdjgNB7zi9-zETjSy4
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username":"Indu",
+    "password":"pass"
+}
