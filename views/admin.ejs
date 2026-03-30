@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - My Posts</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f8f8f8; }
+        .container { max-width: 600px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        h2 { text-align: center; margin-bottom: 24px; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 12px; border-bottom: 1px solid #eee; }
+        .logout-btn, .new-post-btn {
+            display: inline-block;
+            margin: 12px 8px 0 0;
+            padding: 10px 24px;
+            background: mediumpurple;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .logout-btn:hover, .new-post-btn:hover {
+            background: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, <%= username %>!</h2>
+        <a href="/logout" class="logout-btn">Logout</a>
+        <a href="/post" class="new-post-btn">New Post</a>
+        <h3>Your Posts</h3>
+        <% if (posts.length > 0) { %>
+    <ul>
+        <% posts.forEach(function(post) { %>
+            <li>
+                <%= post.title %>
+                <a href="/articles/<%= post.id %>">View</a>
+                <a href="/edit/<%= post.id %>">Edit</a>
+                <form method="POST" action="/delete/<%= post.id %>" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Delete this post?')">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <% } else { %>
+        <p>No posts yet.</p>
+    <% } %>
+    </div>
+</body>
+</html>

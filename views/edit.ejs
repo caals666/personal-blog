@@ -2,21 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
+    <title>Edit Post</title>
     <style>
-        body { background: #f5f5fa; font-family: Arial, sans-serif; }
-        .form-container {
-            max-width: 400px;
-            margin: 60px auto;
-            background: #fff;
-            padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px #0001;
-        }
+        body { font-family: Arial, sans-serif; background: #f8f8f8; }
+        .container { max-width: 600px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
         h2 { text-align: center; margin-bottom: 24px; }
         label { display: block; margin-bottom: 6px; font-weight: bold; }
-        input, textarea {
+        textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 18px;
@@ -37,16 +29,19 @@
         button:hover {
             background: rebeccapurple;
         }
+        a { display: inline-block; margin-top: 24px; color: mediumpurple; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Create a Post</h2>
-        <form method="POST" action="/post">
+    <div class="container">
+        <h2>Edit Post</h2>
+        <form method="POST" action="/edit/<%= id %>">
             <label for="content">Post Content</label>
-            <textarea id="content" name="content" rows="4" required></textarea>
-            <button type="submit">Submit</button>
+            <textarea id="content" name="content" rows="4" required><%= post.title %></textarea>
+            <button type="submit">Save</button>
         </form>
+        <a href="/admin">&larr; Back to Admin</a>
     </div>
 </body>
 </html>
